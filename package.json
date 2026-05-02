@@ -1,0 +1,54 @@
+{
+  "name": "@primitivekit/angular",
+  "version": "0.0.1",
+  "description": "Primitive Angular components with zero hardcoded values. Fully customizable via CSS variables.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": {
+      "import": "./dist/tokens/index.js",
+      "require": "./dist/tokens/index.js",
+      "types": "./dist/tokens/index.d.ts"
+    },
+    "./tokens/tokens.css": "./dist/tokens/tokens.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "ui",
+    "customizable",
+    "accessible",
+    "css-variables"
+  ],
+  "author": "PrimitiveKit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primitivekit/angular"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "ng-packagr": "^16.0.0",
+    "typescript": "^5.0.0"
+  }
+}
