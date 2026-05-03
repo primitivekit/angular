@@ -1,0 +1,602 @@
+/* 
+ * PrimitiveKit Button Component
+ * Comprehensive CSS Variable System - Every property is customizable
+ * Zero hardcoded values - Complete control via CSS variables
+ */
+
+.btn {
+  /* ============================================
+   * SPACING - Padding (All Directions)
+   * ============================================ */
+  --btn-padding-top: var(--btn-padding-y, 0.625rem);
+  --btn-padding-right: var(--btn-padding-x, 1.25rem);
+  --btn-padding-bottom: var(--btn-padding-y, 0.625rem);
+  --btn-padding-left: var(--btn-padding-x, 1.25rem);
+  
+  /* Padding shortcuts */
+  --btn-padding-y: 0.625rem;
+  --btn-padding-x: 1.25rem;
+  
+  /* ============================================
+   * SPACING - Margin (All Directions)
+   * ============================================ */
+  --btn-margin-top: var(--btn-margin-y, 0);
+  --btn-margin-right: var(--btn-margin-x, 0);
+  --btn-margin-bottom: var(--btn-margin-y, 0);
+  --btn-margin-left: var(--btn-margin-x, 0);
+  
+  /* Margin shortcuts */
+  --btn-margin-y: 0;
+  --btn-margin-x: 0;
+  
+  /* ============================================
+   * BORDERS - Width (All Sides)
+   * ============================================ */
+  --btn-border-top-width: var(--btn-border-width, 1px);
+  --btn-border-right-width: var(--btn-border-width, 1px);
+  --btn-border-bottom-width: var(--btn-border-width, 1px);
+  --btn-border-left-width: var(--btn-border-width, 1px);
+  --btn-border-width: 1px;
+  
+  /* ============================================
+   * BORDERS - Style (All Sides)
+   * ============================================ */
+  --btn-border-top-style: var(--btn-border-style, solid);
+  --btn-border-right-style: var(--btn-border-style, solid);
+  --btn-border-bottom-style: var(--btn-border-style, solid);
+  --btn-border-left-style: var(--btn-border-style, solid);
+  --btn-border-style: solid;
+  
+  /* ============================================
+   * BORDERS - Color (All Sides)
+   * ============================================ */
+  --btn-border-top-color: var(--btn-border-color, #3b82f6);
+  --btn-border-right-color: var(--btn-border-color, #3b82f6);
+  --btn-border-bottom-color: var(--btn-border-color, #3b82f6);
+  --btn-border-left-color: var(--btn-border-color, #3b82f6);
+  --btn-border-color: #3b82f6;
+  
+  /* ============================================
+   * BORDERS - Radius (All Corners)
+   * ============================================ */
+  --btn-border-top-left-radius: var(--btn-border-radius, 0.375rem);
+  --btn-border-top-right-radius: var(--btn-border-radius, 0.375rem);
+  --btn-border-bottom-right-radius: var(--btn-border-radius, 0.375rem);
+  --btn-border-bottom-left-radius: var(--btn-border-radius, 0.375rem);
+  --btn-border-radius: 0.375rem;
+  
+  /* ============================================
+   * DIMENSIONS
+   * ============================================ */
+  --btn-width: auto;
+  --btn-min-width: auto;
+  --btn-max-width: none;
+  --btn-height: auto;
+  --btn-min-height: 2.5rem;
+  --btn-max-height: none;
+  
+  /* ============================================
+   * TYPOGRAPHY
+   * ============================================ */
+  --btn-font-family: system-ui, -apple-system, sans-serif;
+  --btn-font-size: 1rem;
+  --btn-font-weight: 500;
+  --btn-font-style: normal;
+  --btn-line-height: 1.5;
+  --btn-letter-spacing: normal;
+  --btn-text-align: center;
+  --btn-text-decoration: none;
+  --btn-text-transform: none;
+  --btn-text-shadow: none;
+  --btn-white-space: nowrap;
+  --btn-word-spacing: normal;
+  
+  /* ============================================
+   * COLORS - Base State
+   * ============================================ */
+  --btn-bg-color: #3b82f6;
+  --btn-text-color: #ffffff;
+  --btn-color: var(--btn-text-color);
+  
+  /* ============================================
+   * COLORS - Hover State
+   * ============================================ */
+  --btn-bg-color-hover: #2563eb;
+  --btn-text-color-hover: #ffffff;
+  --btn-border-color-hover: #2563eb;
+  --btn-border-top-color-hover: var(--btn-border-color-hover);
+  --btn-border-right-color-hover: var(--btn-border-color-hover);
+  --btn-border-bottom-color-hover: var(--btn-border-color-hover);
+  --btn-border-left-color-hover: var(--btn-border-color-hover);
+  
+  /* ============================================
+   * COLORS - Active/Pressed State
+   * ============================================ */
+  --btn-bg-color-active: #1d4ed8;
+  --btn-text-color-active: #ffffff;
+  --btn-border-color-active: #1d4ed8;
+  --btn-border-top-color-active: var(--btn-border-color-active);
+  --btn-border-right-color-active: var(--btn-border-color-active);
+  --btn-border-bottom-color-active: var(--btn-border-color-active);
+  --btn-border-left-color-active: var(--btn-border-color-active);
+  
+  /* ============================================
+   * COLORS - Focus State
+   * ============================================ */
+  --btn-bg-color-focus: var(--btn-bg-color);
+  --btn-text-color-focus: var(--btn-text-color);
+  --btn-border-color-focus: var(--btn-border-color);
+  --btn-outline-color: #3b82f6;
+  --btn-outline-width: 2px;
+  --btn-outline-style: solid;
+  --btn-outline-offset: 2px;
+  
+  /* ============================================
+   * COLORS - Disabled State
+   * ============================================ */
+  --btn-bg-color-disabled: #e5e7eb;
+  --btn-text-color-disabled: #9ca3af;
+  --btn-border-color-disabled: #e5e7eb;
+  --btn-opacity-disabled: 0.6;
+  
+  /* ============================================
+   * SHADOWS
+   * ============================================ */
+  --btn-box-shadow: none;
+  --btn-box-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --btn-box-shadow-active: none;
+  --btn-box-shadow-focus: none;
+  --btn-box-shadow-disabled: none;
+  
+  /* ============================================
+   * TRANSFORMS
+   * ============================================ */
+  --btn-transform: none;
+  --btn-transform-hover: translateY(-1px);
+  --btn-transform-active: translateY(0);
+  --btn-transform-focus: none;
+  --btn-transform-disabled: none;
+  --btn-transform-origin: center;
+  
+  /* ============================================
+   * TRANSITIONS
+   * ============================================ */
+  --btn-transition-property: all;
+  --btn-transition-duration: 0.2s;
+  --btn-transition-timing: ease-in-out;
+  --btn-transition-delay: 0s;
+  
+  /* ============================================
+   * LAYOUT & DISPLAY
+   * ============================================ */
+  --btn-display: inline-flex;
+  --btn-position: relative;
+  --btn-top: auto;
+  --btn-right: auto;
+  --btn-bottom: auto;
+  --btn-left: auto;
+  --btn-z-index: auto;
+  --btn-overflow: visible;
+  --btn-vertical-align: middle;
+  
+  /* ============================================
+   * FLEXBOX (for content alignment)
+   * ============================================ */
+  --btn-flex-direction: row;
+  --btn-flex-wrap: nowrap;
+  --btn-justify-content: center;
+  --btn-align-items: center;
+  --btn-align-content: normal;
+  --btn-gap: 0.5rem;
+  --btn-row-gap: var(--btn-gap);
+  --btn-column-gap: var(--btn-gap);
+  
+  /* ============================================
+   * CURSOR & INTERACTION
+   * ============================================ */
+  --btn-cursor: pointer;
+  --btn-cursor-disabled: not-allowed;
+  --btn-pointer-events: auto;
+  --btn-user-select: none;
+  --btn-touch-action: manipulation;
+  
+  /* ============================================
+   * OPACITY & VISIBILITY
+   * ============================================ */
+  --btn-opacity: 1;
+  --btn-visibility: visible;
+  
+  /* ============================================
+   * FILTERS & EFFECTS
+   * ============================================ */
+  --btn-filter: none;
+  --btn-filter-hover: none;
+  --btn-filter-active: none;
+  --btn-filter-disabled: none;
+  --btn-backdrop-filter: none;
+  --btn-mix-blend-mode: normal;
+  
+  /* ============================================
+   * ANIMATION
+   * ============================================ */
+  --btn-animation: none;
+  --btn-animation-duration: 0s;
+  --btn-animation-timing: ease;
+  --btn-animation-delay: 0s;
+  --btn-animation-iteration: 1;
+  --btn-animation-direction: normal;
+  --btn-animation-fill-mode: none;
+  
+  /* ============================================
+   * ICON SPACING
+   * ============================================ */
+  --btn-icon-size: 1em;
+  --btn-icon-margin-left: 0;
+  --btn-icon-margin-right: 0;
+  
+  /* ============================================
+   * SPINNER/LOADING
+   * ============================================ */
+  --btn-spinner-size: 1em;
+  --btn-spinner-width: 2px;
+  --btn-spinner-color: currentColor;
+  --btn-spinner-duration: 0.6s;
+  
+  /* ============================================
+   * APPLY ALL STYLES
+   * ============================================ */
+  
+  /* Display & Position */
+  display: var(--btn-display);
+  position: var(--btn-position);
+  top: var(--btn-top);
+  right: var(--btn-right);
+  bottom: var(--btn-bottom);
+  left: var(--btn-left);
+  z-index: var(--btn-z-index);
+  
+  /* Dimensions */
+  width: var(--btn-width);
+  min-width: var(--btn-min-width);
+  max-width: var(--btn-max-width);
+  height: var(--btn-height);
+  min-height: var(--btn-min-height);
+  max-height: var(--btn-max-height);
+  
+  /* Spacing - Padding */
+  padding-top: var(--btn-padding-top);
+  padding-right: var(--btn-padding-right);
+  padding-bottom: var(--btn-padding-bottom);
+  padding-left: var(--btn-padding-left);
+  
+  /* Spacing - Margin */
+  margin-top: var(--btn-margin-top);
+  margin-right: var(--btn-margin-right);
+  margin-bottom: var(--btn-margin-bottom);
+  margin-left: var(--btn-margin-left);
+  
+  /* Borders - Width */
+  border-top-width: var(--btn-border-top-width);
+  border-right-width: var(--btn-border-right-width);
+  border-bottom-width: var(--btn-border-bottom-width);
+  border-left-width: var(--btn-border-left-width);
+  
+  /* Borders - Style */
+  border-top-style: var(--btn-border-top-style);
+  border-right-style: var(--btn-border-right-style);
+  border-bottom-style: var(--btn-border-bottom-style);
+  border-left-style: var(--btn-border-left-style);
+  
+  /* Borders - Color */
+  border-top-color: var(--btn-border-top-color);
+  border-right-color: var(--btn-border-right-color);
+  border-bottom-color: var(--btn-border-bottom-color);
+  border-left-color: var(--btn-border-left-color);
+  
+  /* Borders - Radius */
+  border-top-left-radius: var(--btn-border-top-left-radius);
+  border-top-right-radius: var(--btn-border-top-right-radius);
+  border-bottom-right-radius: var(--btn-border-bottom-right-radius);
+  border-bottom-left-radius: var(--btn-border-bottom-left-radius);
+  
+  /* Colors */
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  
+  /* Typography */
+  font-family: var(--btn-font-family);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  font-style: var(--btn-font-style);
+  line-height: var(--btn-line-height);
+  letter-spacing: var(--btn-letter-spacing);
+  text-align: var(--btn-text-align);
+  text-decoration: var(--btn-text-decoration);
+  text-transform: var(--btn-text-transform);
+  text-shadow: var(--btn-text-shadow);
+  white-space: var(--btn-white-space);
+  word-spacing: var(--btn-word-spacing);
+  
+  /* Flexbox */
+  flex-direction: var(--btn-flex-direction);
+  flex-wrap: var(--btn-flex-wrap);
+  justify-content: var(--btn-justify-content);
+  align-items: var(--btn-align-items);
+  align-content: var(--btn-align-content);
+  gap: var(--btn-gap);
+  row-gap: var(--btn-row-gap);
+  column-gap: var(--btn-column-gap);
+  
+  /* Effects */
+  box-shadow: var(--btn-box-shadow);
+  transform: var(--btn-transform);
+  transform-origin: var(--btn-transform-origin);
+  opacity: var(--btn-opacity);
+  visibility: var(--btn-visibility);
+  filter: var(--btn-filter);
+  backdrop-filter: var(--btn-backdrop-filter);
+  mix-blend-mode: var(--btn-mix-blend-mode);
+  
+  /* Transitions */
+  transition-property: var(--btn-transition-property);
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: var(--btn-transition-timing);
+  transition-delay: var(--btn-transition-delay);
+  
+  /* Animation */
+  animation-name: var(--btn-animation);
+  animation-duration: var(--btn-animation-duration);
+  animation-timing-function: var(--btn-animation-timing);
+  animation-delay: var(--btn-animation-delay);
+  animation-iteration-count: var(--btn-animation-iteration);
+  animation-direction: var(--btn-animation-direction);
+  animation-fill-mode: var(--btn-animation-fill-mode);
+  
+  /* Interaction */
+  cursor: var(--btn-cursor);
+  pointer-events: var(--btn-pointer-events);
+  user-select: var(--btn-user-select);
+  touch-action: var(--btn-touch-action);
+  vertical-align: var(--btn-vertical-align);
+  overflow: var(--btn-overflow);
+}
+
+/* ============================================
+ * HOVER STATE
+ * ============================================ */
+.btn:hover:not(:disabled):not(.btn--disabled) {
+  background-color: var(--btn-bg-color-hover);
+  color: var(--btn-text-color-hover);
+  border-top-color: var(--btn-border-top-color-hover);
+  border-right-color: var(--btn-border-right-color-hover);
+  border-bottom-color: var(--btn-border-bottom-color-hover);
+  border-left-color: var(--btn-border-left-color-hover);
+  box-shadow: var(--btn-box-shadow-hover);
+  transform: var(--btn-transform-hover);
+  filter: var(--btn-filter-hover);
+}
+
+/* ============================================
+ * ACTIVE/PRESSED STATE
+ * ============================================ */
+.btn:active:not(:disabled):not(.btn--disabled) {
+  background-color: var(--btn-bg-color-active);
+  color: var(--btn-text-color-active);
+  border-top-color: var(--btn-border-top-color-active);
+  border-right-color: var(--btn-border-right-color-active);
+  border-bottom-color: var(--btn-border-bottom-color-active);
+  border-left-color: var(--btn-border-left-color-active);
+  box-shadow: var(--btn-box-shadow-active);
+  transform: var(--btn-transform-active);
+  filter: var(--btn-filter-active);
+}
+
+/* ============================================
+ * FOCUS STATE
+ * ============================================ */
+.btn:focus-visible {
+  background-color: var(--btn-bg-color-focus);
+  color: var(--btn-text-color-focus);
+  border-color: var(--btn-border-color-focus);
+  outline: var(--btn-outline-width) var(--btn-outline-style) var(--btn-outline-color);
+  outline-offset: var(--btn-outline-offset);
+  box-shadow: var(--btn-box-shadow-focus);
+  transform: var(--btn-transform-focus);
+}
+
+/* ============================================
+ * DISABLED STATE
+ * ============================================ */
+.btn:disabled,
+.btn.btn--disabled {
+  background-color: var(--btn-bg-color-disabled);
+  color: var(--btn-text-color-disabled);
+  border-color: var(--btn-border-color-disabled);
+  cursor: var(--btn-cursor-disabled);
+  opacity: var(--btn-opacity-disabled);
+  box-shadow: var(--btn-box-shadow-disabled);
+  transform: var(--btn-transform-disabled);
+  filter: var(--btn-filter-disabled);
+}
+
+/* ============================================
+ * SIZE VARIANTS
+ * ============================================ */
+.btn--small {
+  --btn-padding-y: 0.375rem;
+  --btn-padding-x: 0.875rem;
+  --btn-font-size: 0.875rem;
+  --btn-line-height: 1.5;
+  --btn-min-height: 2rem;
+  --btn-gap: 0.375rem;
+}
+
+.btn--large {
+  --btn-padding-y: 0.875rem;
+  --btn-padding-x: 1.75rem;
+  --btn-font-size: 1.125rem;
+  --btn-line-height: 1.5;
+  --btn-min-height: 3rem;
+  --btn-gap: 0.625rem;
+}
+
+/* ============================================
+ * COLOR VARIANTS
+ * ============================================ */
+
+/* Secondary */
+.btn--secondary {
+  --btn-bg-color: #6b7280;
+  --btn-text-color: #ffffff;
+  --btn-border-color: #6b7280;
+  --btn-bg-color-hover: #4b5563;
+  --btn-text-color-hover: #ffffff;
+  --btn-border-color-hover: #4b5563;
+  --btn-bg-color-active: #374151;
+  --btn-text-color-active: #ffffff;
+  --btn-border-color-active: #374151;
+  --btn-outline-color: #6b7280;
+}
+
+/* Success */
+.btn--success {
+  --btn-bg-color: #10b981;
+  --btn-text-color: #ffffff;
+  --btn-border-color: #10b981;
+  --btn-bg-color-hover: #059669;
+  --btn-text-color-hover: #ffffff;
+  --btn-border-color-hover: #059669;
+  --btn-bg-color-active: #047857;
+  --btn-text-color-active: #ffffff;
+  --btn-border-color-active: #047857;
+  --btn-outline-color: #10b981;
+}
+
+/* Danger */
+.btn--danger {
+  --btn-bg-color: #ef4444;
+  --btn-text-color: #ffffff;
+  --btn-border-color: #ef4444;
+  --btn-bg-color-hover: #dc2626;
+  --btn-text-color-hover: #ffffff;
+  --btn-border-color-hover: #dc2626;
+  --btn-bg-color-active: #b91c1c;
+  --btn-text-color-active: #ffffff;
+  --btn-border-color-active: #b91c1c;
+  --btn-outline-color: #ef4444;
+}
+
+/* Outline */
+.btn--outline {
+  --btn-bg-color: transparent;
+  --btn-text-color: #3b82f6;
+  --btn-border-color: #3b82f6;
+  --btn-bg-color-hover: #3b82f6;
+  --btn-text-color-hover: #ffffff;
+  --btn-border-color-hover: #3b82f6;
+  --btn-bg-color-active: #2563eb;
+  --btn-text-color-active: #ffffff;
+  --btn-border-color-active: #2563eb;
+  --btn-outline-color: #3b82f6;
+}
+
+/* Ghost */
+.btn--ghost {
+  --btn-bg-color: transparent;
+  --btn-text-color: #3b82f6;
+  --btn-border-color: transparent;
+  --btn-bg-color-hover: #eff6ff;
+  --btn-text-color-hover: #2563eb;
+  --btn-border-color-hover: transparent;
+  --btn-bg-color-active: #dbeafe;
+  --btn-text-color-active: #1d4ed8;
+  --btn-border-color-active: transparent;
+  --btn-outline-color: #3b82f6;
+}
+
+/* ============================================
+ * FULL WIDTH
+ * ============================================ */
+.btn--full-width {
+  --btn-width: 100%;
+  --btn-display: flex;
+}
+
+/* ============================================
+ * LOADING STATE
+ * ============================================ */
+.btn--loading {
+  pointer-events: none;
+}
+
+.btn__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn__spinner-circle {
+  width: var(--btn-spinner-size);
+  height: var(--btn-spinner-size);
+  border: var(--btn-spinner-width) solid var(--btn-spinner-color);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin var(--btn-spinner-duration) linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+ * ICON ELEMENTS
+ * ============================================ */
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+}
+
+.btn__icon--left {
+  margin-right: var(--btn-icon-margin-right, 0);
+}
+
+.btn__icon--right {
+  margin-left: var(--btn-icon-margin-left, 0);
+}
+
+.btn__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+ * ACCESSIBILITY - High Contrast Mode
+ * ============================================ */
+@media (prefers-contrast: high) {
+  .btn {
+    --btn-border-width: 2px;
+  }
+}
+
+/* ============================================
+ * ACCESSIBILITY - Reduced Motion
+ * ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    --btn-transition-duration: 0.01ms;
+    --btn-transform-hover: none;
+    --btn-transform-active: none;
+    --btn-animation-duration: 0.01ms;
+  }
+  
+  .btn__spinner-circle {
+    animation-duration: 1.5s;
+  }
+}
